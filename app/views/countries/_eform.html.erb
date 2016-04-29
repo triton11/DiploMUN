@@ -1,17 +1,21 @@
 <%= form_tag("/countries/event", method: "post") do %>
+  <p>
   <%= label_tag(:event_name, "Event title") %>
   <%= text_field(:event_name, :title) %>
+  </p>
   <%= label_tag(:military, "Combatants") %>
-  <%= number_field(:military, :amount_m, in: 0..100000, step: 100) %>
+  <%= number_field(:military, :amount_m, in: 0..50000, step: 50) %>
   <%= label_tag(:resource, "Resource loss") %>
-  <%= number_field(:resource, :amount_r, in: 0..100000, step: 100) %>
+  <%= number_field(:resource, :amount_r, in: 0..50000, step: 50) %>
   <%= label_tag(:funds, "Funding loss") %>
-  <%= number_field(:funds, :amount_f, in: 0..100000, step: 100) %>
+  <%= number_field(:funds, :amount_f, in: 0..50000, step: 50) %>
   <%= label_tag(:r_energy, "Renewable Energy loss") %>
-  <%= number_field(:r_energy, :amount_re, in: 0..10000, step: 100) %>
+  <%= number_field(:r_energy, :amount_re, in: 0..5000, step: 50) %>
   <%= label_tag(:n_energy, "Nonrenewable Energy loss") %>
-  <%= number_field(:n_energy, :amount_ne, in: 0..10000, step: 100) %>
-  <%= collection_select(:country, :country_id, Country.all, :id, :name, prompt: true) %>
+  <%= number_field(:n_energy, :amount_ne, in: 0..5000, step: 50) %>
+  <p>
+  <strong> To: </strong> <%= collection_select(:country, :country_id, Country.all, :id, :name, prompt: true) %>
+  </p>
   <%= submit_tag("Send") %>
 <% end %>
   

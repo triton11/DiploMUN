@@ -36,7 +36,6 @@ class HomeController < ApplicationController
         @inter.update(:global => @inter.global + country.economy,
           :iclimate => @inter.iclimate + country.climate,
           :iquality => @inter.iquality + country.quality)
-        puts @inter.global
       end
     end
     redirect_to @country

@@ -1,12 +1,12 @@
 <%= form_tag("/countries/#{@country.id}/invest/enter", method: "post") do %>
   <%= label_tag(:tech, "Technology") %>
-  <%= number_field(:tech, :amount_t, in: 0..@country.funds, step: 50) %>
+  <%= number_field(:tech, :amount_t, in: 0..@country.funds, step: 1) %>
   <%= label_tag(:education, "Education") %>
-  <%= number_field(:education, :amount_e, in: 0..@country.funds, step: 50) %>
+  <%= number_field(:education, :amount_e, in: 0..@country.funds, step: 1) %>
   <%= label_tag(:infrastructure, "Infrastructure") %>
-  <%= number_field(:infrastructure, :amount_i, in: 0..@country.funds, step: 50) %>
+  <%= number_field(:infrastructure, :amount_i, in: 0..@country.funds, step: 1) %>
   <%= label_tag(:military, "Defense") %>
-  <%= number_field(:military, :amount_m, in: 0..@country.funds, step: 50) %>
+  <%= number_field(:military, :amount_m, in: 0..@country.funds, step: 1) %>
   <%= submit_tag("Send") %>
 <% end %>
   

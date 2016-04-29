@@ -74,10 +74,10 @@ class Country < ActiveRecord::Base
       self.f_military = 0
       @bad = self.population*(10.0/3.0)
     end
-    if (self.population - self.n_energy - r_energy) < 0
+    if (self.n_energy + r_energy - self.population) < 0
       @bad = self.population*(10.0/3.0)
     end
-    if (self.population*10.0 - self.resource) < 0
+    if (self.resource - 10*self.population) < 0
       @bad = self.population*(10.0/3.0)
     end
     puts (@bad)
@@ -88,21 +88,19 @@ class Country < ActiveRecord::Base
     self.f_metric += (self.infrastructure - (10.0/3.0)*self.population)*(3.0/(4.0*self.population)) 
     + (self.tech - (10.0/3.0)*self.population)*(3.0/(4.0*self.population))
     self.c_metric += (self.education - (10.0/3.0)*self.population)*(3.0/(2.0*self.population))
-    puts e_metric
-    puts r_metric
-    puts f_metric
+    puts c_metric
 
     self.r_energy = (self.e_metric*self.population/5.0)*(self.c_metric/10.0)
     self.n_energy = (self.e_metric*self.population/5.0)*((10.0-self.c_metric)/10.0)
     self.resource = (self.r_metric*self.population*2.0) - 0.5*@bad
     self.funds += (self.f_metric*self.population*2.0) - @bad
 
-    self.climate = (self.r_energy-self.n_energy)/self.population
+    self.climate = (self.r_energy-self.n_energy)*1.0/self.population*1.0
     self.economy = (self.funds*3.0/(80.0*self.population)) + (self.resource/(80.0*self.population))
     self.quality += ((self.education - (10.0/3.0)*self.population)*(1.0/(self.population)) 
-    + (self.tech - (10.0/3.0)*self.population)*(1.0/(self.population))) - @bad/100.0
+    + (self.tech - (10.0/3.0)*self.population)*(1.0/(self.population))) - @bad/1000.0
     self.happiness += ((self.education - (10.0/3.0)*self.population)*(1.0/(self.population)) 
-    + (self.infrastructure - (10.0/3.0)*self.population)*(1.0/(self.population))) - @bad/100.0
+    + (self.infrastructure - (10.0/3.0)*self.population)*(1.0/(self.population))) - @bad/1000.0
 
     self.tech = 0
     self.education = 0
