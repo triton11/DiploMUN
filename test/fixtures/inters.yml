@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  global: 1
+  iclimate: 1
+  iquality: 1
+
+two:
+  global: 1
+  iclimate: 1
+  iquality: 1

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @amendment.title %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%= @amendment.body %>
+</p>
+
+<p>
+  <strong>Sponsor:</strong>
+  <%= @amendment.sponsor %>
+</p>
+
+<%= link_to 'Back', @resolution %> |
+<%= link_to 'Destroy', @amendment, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @country.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @country.email %>
+</p>
+
+<p>
+  <strong>Funds:</strong>
+  <%= @country.funds %>
+</p>
+
+<p>
+  <strong>Resource:</strong>
+  <%= @country.resource %>
+</p>
+
+<p>
+  <strong>R energy:</strong>
+  <%= @country.r_energy %>
+</p>
+
+<p>
+  <strong>N energy:</strong>
+  <%= @country.n_energy %>
+</p>
+
+<p>
+  <strong>F military:</strong>
+  <%= @country.f_military %>
+</p>
+
+<p>
+  <strong>U military:</strong>
+  <%= @country.u_military %>
+</p>
+
+<p>
+  <strong>Tech:</strong>
+  <%= @country.tech %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @country.education %>
+</p>
+
+<p>
+  <strong>Infrastructure:</strong>
+  <%= @country.infrastructure %>
+</p>
+
+<%= link_to 'Invest', "/countries/#{@country.id}/invest" %>
+

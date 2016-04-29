@@ -1,0 +1,30 @@
+<%= form_tag("/countries/trade/#{@country_t.id}/submit", method: "post") do %>
+  <p>
+  <%= label_tag(:funds, "Funding") %>
+  <%= number_field(:funds, :amount_f, in: 0..@country.funds, step: 50) %>
+  </p>
+  <p>
+  <%= label_tag(:resource, "Resources") %>
+  <%= number_field(:resource, :amount_r, in: 0..@country.resource, step: 50) %>
+  </p>
+  <p>
+  <%= label_tag(:r_energy, "Renewable Energy") %>
+  <%= number_field(:r_energy, :amount_re, in: 0..@country.r_energy, step: 50) %>
+  </p>
+  <p>
+  <%= label_tag(:n_energy, "Non-renewable Energy") %>
+  <%= number_field(:n_energy, :amount_ne, in: 0..@country.n_energy, step: 50) %>
+  </p>
+  <p>
+  <%= label_tag(:f_military, "Friendly Military Support") %>
+  <%= number_field(:f_military, :amount_fm, in: 0..@country.f_military, step: 50) %>
+  </p>
+  <p>
+  <%= label_tag(:u_military, "Unfriendly Military Attack") %>
+  <%= number_field(:u_military, :amount_um, in: 0..@country.f_military, step: 50) %>
+  </p>
+  <p>
+  <%= submit_tag("Send") %>
+  </p>
+<% end %>
+  

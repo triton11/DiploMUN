@@ -1,0 +1,24 @@
+<nav class="nav-banner">
+  <% if logged_in? %>
+    <% if current_user.isAdmin %>
+      <%= link_to 'Home', "/home/#{session[:country_id]}"%>
+      <%= link_to 'Resolutions', "/resolutions" %>
+      <%= link_to 'Countries', countries_path %>
+      <%= link_to 'Logout', "/logout", method: :delete %>
+    <% else %>
+      <%= link_to 'Home', "/home/#{session[:country_id]}"%>
+      <%= link_to 'Show', "/countries/#{session[:country_id]}" %>
+      <%= link_to 'Trade', "/countries" %>
+      <%= link_to 'Resolutions', "/resolutions" %>
+      <%= link_to 'Logout', "/logout", method: :delete %>
+    <% end %>
+  <% else %>
+  <%= link_to 'Home', "/"%>
+  <%= link_to 'Log in', "/login" %>
+ <!--  <%= link_to 'Sign up', "/countries/new" %> -->
+  <% end %>
+
+  <!-- Add link to user's show page and log out button if logged in -->
+  <!-- Add log out link otherwise -->
+  </span>
+</nav>

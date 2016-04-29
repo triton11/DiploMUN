@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @resolution.name %>
+  <% if logged_in? %>
+  <%= link_to 'Sign', "/resolutions/#{@resolution.id}/countries", method: :post %>
+  <%= link_to 'Remove Signature', "/resolutions/#{@resolution.id}/countries", method: :delete %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @resolution.topic %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+</p>
+<p>
+  <%= @resolution.body %>
+</p>
+<p>
+  <strong>Signatories:</strong>
+	  <% @resolution.countries.each do |country| %>
+	  	<%= country.name %>
+    <% end %>
+</p>
+<p> <strong>Amendments:</strong> </p>
+<%= link_to 'New', "/resolutions/#{@resolution.id}/new"%>
+<% @resolution.amendments.each do |amend| %>
+  <% @amendment = amend %>
+  <p> 
+    <%= @amendment.title %>
+    <%= link_to 'Show', @amendment %>
+  </p>
+<% end %>
+
+<p>
+<%= link_to 'Edit', edit_resolution_path(@resolution) %> |
+<%= link_to 'Back', resolutions_path %>
+</p>

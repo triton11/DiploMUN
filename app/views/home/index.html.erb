@@ -1,0 +1,11 @@
+<h1>Welcome to DiploMUN Admin</h1>
+<h2><%= @inter.time %> </h2>
+<p>
+<%= button_to "Next Round", action: "next_round" %>
+</p>
+<p>
+<%= button_to "Calculate Global", action: "calculate" %>
+</p>
+<p>
+<%= link_to "New Event", '/countries/event' %>
+</p>

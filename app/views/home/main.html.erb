@@ -1,0 +1,40 @@
+<h1>Welcome to DiploMUN Country</h1>
+<h2>National</h2>
+<p>
+  <% @headline.each do |head| %>
+  <p>
+    <%= head %>
+  </p>
+  <% end %>
+</p>
+<p>
+  <strong>National Economy:</strong>
+  <%= @country.economy %>
+</p>
+<p>
+  <strong>Quality of Life:</strong>
+  <%= @country.quality %>
+</p>
+
+<p>
+  <strong>National Happiness:</strong>
+  <%= @country.happiness %>
+</p>
+
+<p>
+  <strong>National Environment:</strong>
+  <%= @country.climate %>
+</p>
+<h2>International</h2>
+<p>
+  <strong>Global Progress:</strong>
+  <%= @inter.global %>
+</p>
+<p>
+  <strong>Global Climate:</strong>
+  <%= @inter.iclimate %>
+</p>
+<p>
+  <strong>Global Quality of Life:</strong>
+  <%= @inter.iquality %>
+</p>

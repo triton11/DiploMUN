@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  password: MyString
+  resource: 1
+  r_energy: 1
+  n_energy: 1
+  f_military: 1
+  u_military: 1
+  tech: 1
+  education: 1
+  infrastructure: 1
+
+two:
+  name: MyString
+  email: MyString
+  password: MyString
+  resource: 1
+  r_energy: 1
+  n_energy: 1
+  f_military: 1
+  u_military: 1
+  tech: 1
+  education: 1
+  infrastructure: 1
