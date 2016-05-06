@@ -1,9 +1,25 @@
-<h1 id="log_in">Log In</h1>
-<%= form_tag("/login", method: "post") do %>
-  <%= label_tag(:name, "country:") %>
-  <%= text_field_tag(:name) %>
-  <%= label_tag(:password, "password:") %>
-  <%= text_field_tag(:password) %>
-  <%= submit_tag("submit") %>
-  
-<% end %>
+
+<body class="login">
+	<section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+					<h1 id="log_in">Log In</h1>
+          <p>
+  					<%= form_tag("/login", method: "post") do %>
+            <span style="color:white;">
+  					  <%= label_tag(:name, "country:") %>
+            </span>
+  					  <%= text_field_tag(:name) %>
+            <span style="color:white;">
+  					  <%= label_tag(:password, "password:") %>
+            </span>
+  					  <%= text_field_tag(:password) %>
+  					  <%= submit_tag("login") %>
+  					<% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

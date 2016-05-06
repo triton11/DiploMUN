@@ -1,24 +1,33 @@
-<nav class="nav-banner">
-  <% if logged_in? %>
-    <% if current_user.isAdmin %>
-      <%= link_to 'Home', "/home/#{session[:country_id]}"%>
-      <%= link_to 'Resolutions', "/resolutions" %>
-      <%= link_to 'Countries', countries_path %>
-      <%= link_to 'Logout', "/logout", method: :delete %>
-    <% else %>
-      <%= link_to 'Home', "/home/#{session[:country_id]}"%>
-      <%= link_to 'Show', "/countries/#{session[:country_id]}" %>
-      <%= link_to 'Trade', "/countries" %>
-      <%= link_to 'Resolutions', "/resolutions" %>
-      <%= link_to 'Logout', "/logout", method: :delete %>
-    <% end %>
-  <% else %>
-  <%= link_to 'Home', "/"%>
-  <%= link_to 'Log in', "/login" %>
- <!--  <%= link_to 'Sign up', "/countries/new" %> -->
-  <% end %>
 
-  <!-- Add link to user's show page and log out button if logged in -->
-  <!-- Add log out link otherwise -->
-  </span>
-</nav>
+
+<body id="page-top">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <a class="navbar-brand page-scroll" href="#page-top">DIPLOMUN</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <% if current_user.isAdmin %>
+              <li><%= link_to 'Home', "/home/#{session[:country_id]}"%></li>
+              <li><%= link_to 'Resolutions', "/resolutions" %></li>
+              <li><%= link_to 'Countries', countries_path %></li>
+              <li><%= link_to 'Logout', "/logout", method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Home', "/home/#{session[:country_id]}"%></li>
+              <li><%= link_to 'Show', "/countries/#{session[:country_id]}" %></li>
+              <li><%= link_to 'Trade', "/countries" %></li>
+              <li><%= link_to 'Resolutions', "/resolutions" %></li>
+              <li><%= link_to 'Logout', "/logout", method: :delete %></li>
+            <% end %>
+          <% else %>
+            <li class="page-scroll"><%= link_to 'Home', "/"%></li>
+            <li class="page-scroll"><%= link_to 'Log in', "/login" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+
